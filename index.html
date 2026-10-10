@@ -1,352 +1,181 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Jamal Web - تصميم مواقع احترافية للمقاهي والمطاعم والشركات">
-<title>Jamal Web | تصميم مواقع</title>
-
+<title>Le Mirage | Café & Restaurant</title>
 <style>
 :root {
-  --blue: #315efb;
-  --cyan: #18b6bd;
-  --ink: #182238;
-  --muted: #667085;
-  --bg: #f6f8fc;
-  --white: #ffffff;
+  --dark:#171b2b;
+  --gold:#d8ad67;
+  --cream:#fff8ed;
+  --orange:#b96b42;
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-body {
-  margin: 0;
-  font-family: Arial, Tahoma, sans-serif;
-  background: var(--bg);
-  color: var(--ink);
-  line-height: 1.8;
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:var(--cream);color:#27252a}
+a{text-decoration:none;color:inherit}
+header{
+  position:absolute;top:0;left:0;width:100%;z-index:5;
+  padding:22px 7%;display:flex;justify-content:space-between;
+  align-items:center;color:white;gap:20px
 }
-a { text-decoration: none; color: inherit; }
-.container { width: min(1100px, 92%); margin: auto; }
-header {
-  position: sticky; top: 0; z-index: 10;
-  background: #ffffffed; backdrop-filter: blur(12px);
-  border-bottom: 1px solid #e8ebf3;
+.logo{font-size:27px;font-family:Georgia,serif;color:var(--gold)}
+nav{display:flex;gap:24px;flex-wrap:wrap}
+nav a{font-size:14px}
+nav a:hover{color:var(--gold)}
+.hero{
+  min-height:690px;display:flex;align-items:center;color:white;
+  padding:130px 8% 80px;
+  background:linear-gradient(90deg,rgba(15,17,27,.88),rgba(15,17,27,.25)),
+  url('https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1800&q=85') center/cover
 }
-nav {
-  min-height: 75px; display: flex; align-items: center;
-  justify-content: space-between; gap: 15px; flex-wrap: wrap;
+.hero-content{max-width:650px}
+.eyebrow{color:var(--gold);letter-spacing:4px;font-size:13px}
+h1{font-family:Georgia,serif;font-size:clamp(48px,7vw,82px);line-height:1.08;margin:22px 0}
+.hero p{font-size:17px;line-height:1.9;color:#eee;max-width:530px}
+.btn{
+ display:inline-block;margin-top:28px;padding:14px 25px;
+ background:var(--gold);color:#201a14;font-weight:bold;
+ border-radius:3px;transition:.25s
 }
-.logo { font-size: 24px; font-weight: 900; }
-.logo span { color: var(--blue); }
-.links { display: flex; gap: 20px; flex-wrap: wrap; }
-.links a:hover { color: var(--blue); }
-select {
-  padding: 9px; border: 1px solid #ddd;
-  border-radius: 10px; background: white;
+.btn:hover{background:white;transform:translateY(-3px)}
+section{padding:85px 8%}
+.heading{text-align:center;margin-bottom:42px}
+.heading small{color:var(--orange);letter-spacing:3px}
+.heading h2{font-family:Georgia,serif;font-size:clamp(32px,4vw,45px);margin:10px 0;color:var(--dark)}
+.heading p{color:#777;max-width:600px;margin:auto;line-height:1.8}
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.intro img{width:100%;height:420px;object-fit:cover;border-radius:4px}
+.intro h2{font-family:Georgia,serif;font-size:39px;color:var(--dark);margin-bottom:18px}
+.intro p{line-height:1.9;color:#69656a}
+.signature{color:var(--orange);font-family:Georgia,serif;font-style:italic;margin-top:18px}
+.menu{background:#f0e5d6}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:white;overflow:hidden;box-shadow:0 10px 30px #30251b0b}
+.card img{width:100%;height:235px;object-fit:cover;display:block;transition:.4s}
+.card:hover img{transform:scale(1.04)}
+.card-info{padding:22px}
+.card h3{font-family:Georgia,serif;font-size:23px;margin-bottom:8px;color:var(--dark)}
+.card p{font-size:14px;line-height:1.8;color:#777}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gallery img{width:100%;height:230px;object-fit:cover}
+.reservation{
+ text-align:center;color:white;
+ background:linear-gradient(#171b2be8,#171b2be8),
+ url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=85') center/cover
 }
-.btn {
-  display: inline-block; padding: 12px 21px;
-  border-radius: 12px; font-weight: bold;
-  background: var(--blue); color: white;
-  transition: .2s;
-}
-.btn:hover { transform: translateY(-3px); }
-.btn.white { background: white; color: var(--blue); }
-.hero { padding: 75px 0; }
-.hero-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  align-items: center; gap: 42px;
-}
-.tag {
-  display: inline-block; padding: 6px 13px;
-  background: #e9efff; color: var(--blue);
-  border-radius: 30px; font-weight: bold;
-}
-h1 { font-size: clamp(35px, 5vw, 58px); line-height: 1.25; margin: 18px 0; }
-h2 { font-size: clamp(27px, 4vw, 38px); line-height: 1.3; }
-h3 { margin-bottom: 8px; }
-p { color: var(--muted); }
-.hero img {
-  width: 100%; height: 390px; object-fit: cover;
-  border-radius: 25px; box-shadow: 0 20px 50px #17203320;
-}
-.buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 25px; }
-section { padding: 65px 0; }
-.section-title { text-align: center; max-width: 680px; margin: 0 auto 35px; }
-.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.card {
-  background: var(--white); padding: 25px;
-  border: 1px solid #e7eaf2; border-radius: 20px;
-  box-shadow: 0 8px 28px #17203308;
-  transition: .2s;
-}
-.card:hover { transform: translateY(-5px); }
-.icon { font-size: 32px; }
-.about {
-  display: grid; grid-template-columns: 1fr 1fr;
-  align-items: center; gap: 35px;
-}
-.about-art {
-  min-height: 280px; border-radius: 25px;
-  background: linear-gradient(135deg, #315efb, #18b6bd);
-  display: grid; place-items: center; color: white;
-  font-size: 65px; font-weight: 900;
-}
-.portfolio { background: white; }
-.project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.project { overflow: hidden; border-radius: 22px; border: 1px solid #e7eaf2; background: white; }
-.project img { width: 100%; height: 260px; object-fit: cover; }
-.project-info { padding: 22px; }
-.pill {
-  display: inline-block; background: #edf1ff;
-  color: #3153d9; padding: 4px 10px;
-  border-radius: 30px; font-size: 13px; margin: 3px;
-}
-.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
-.step { background: white; padding: 20px; border-radius: 18px; border: 1px solid #e7eaf2; }
-.contact {
-  background: #182744; color: white;
-  border-radius: 25px; padding: 35px;
-  display: flex; align-items: center;
-  justify-content: space-between; gap: 25px;
-}
-.contact p { color: #dce5f7; }
-footer { padding: 25px 0; background: white; text-align: center; margin-top: 35px; }
-.note { font-size: 14px; background: #f3f6fc; padding: 13px; border-radius: 12px; }
-[hidden] { display: none !important; }
-
-@media(max-width: 760px) {
-  .hero-grid, .about, .project-grid { grid-template-columns: 1fr; }
-  .grid { grid-template-columns: 1fr; }
-  .steps { grid-template-columns: 1fr 1fr; }
-  .hero { padding: 45px 0; }
-  .hero img { height: 290px; }
-  nav { padding: 12px 0; }
-  .links { gap: 12px; font-size: 14px; }
-  .contact { flex-direction: column; align-items: flex-start; }
+.reservation h2{font-family:Georgia,serif;font-size:42px;color:var(--gold);margin-bottom:15px}
+.reservation p{color:#eee;line-height:1.8}
+footer{background:#10121d;color:#ccc;text-align:center;padding:30px 7%;line-height:2}
+footer strong{color:var(--gold)}
+@media(max-width:800px){
+ header{padding:18px 5%;flex-direction:column;background:#171b2b}
+ nav{justify-content:center;gap:15px}
+ .hero{min-height:650px;padding:170px 7% 70px}
+ .intro{grid-template-columns:1fr}
+ .intro img{height:300px}
+ .cards{grid-template-columns:1fr}
+ .gallery{grid-template-columns:repeat(2,1fr)}
+ .gallery img{height:180px}
+ section{padding:60px 6%}
 }
 </style>
 </head>
-
 <body>
+
 <header>
-  <nav class="container">
-    <a class="logo" href="#home">Jamal <span>Web.</span></a>
-
-    <div class="links">
-      <a href="#home" data-t="home">الرئيسية</a>
-      <a href="#about" data-t="about">من أنا</a>
-      <a href="#services" data-t="services">الخدمات</a>
-      <a href="#portfolio" data-t="portfolio">أعمالي</a>
-      <a href="#contact" data-t="contact">تواصل</a>
-    </div>
-
-    <select id="language" aria-label="Language">
-      <option value="ar">العربية</option>
-      <option value="en">English</option>
-      <option value="fr">Français</option>
-    </select>
+  <a href="#home" class="logo">Le Mirage</a>
+  <nav>
+    <a href="#home">Accueil</a>
+    <a href="#about">Notre histoire</a>
+    <a href="#menu">Notre carte</a>
+    <a href="#gallery">Galerie</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <main>
 <section class="hero" id="home">
-  <div class="container hero-grid">
-    <div>
-      <span class="tag" data-t="tag">مصمم مواقع ويب مستقل</span>
-      <h1 data-t="headline">أصنع لك موقعًا يعرض مشروعك بأفضل صورة.</h1>
-      <p data-t="intro">أصمم مواقع حديثة ومتجاوبة للمقاهي والمطاعم والشركات والمشاريع الصغيرة، بتصميم واضح وتجربة سهلة على الهاتف والحاسوب.</p>
-      <div class="buttons">
-        <a class="btn" href="#portfolio" data-t="view">اكتشف أعمالي</a>
-        <a class="btn white" href="#contact" data-t="start">لنتحدث عن مشروعك</a>
-      </div>
-    </div>
-    <img src="assets/le-mirage-exterior.png" alt="واجهة مقهى Le Mirage التجريبي">
-  </div>
-</section>
-
-<section id="services">
-  <div class="container">
-    <div class="section-title">
-      <h2 data-t="servicesTitle">الخدمات التي أقدمها</h2>
-      <p data-t="servicesIntro">مواقع مصممة لتقديم مشروعك بطريقة احترافية.</p>
-    </div>
-    <div class="grid">
-      <article class="card">
-        <div class="icon">☕</div>
-        <h3 data-t="s1">مواقع المقاهي والمطاعم</h3>
-        <p data-t="sd1">صور المكان، قائمة الطعام، ساعات العمل وطرق التواصل.</p>
-      </article>
-      <article class="card">
-        <div class="icon">🏢</div>
-        <h3 data-t="s2">مواقع الشركات</h3>
-        <p data-t="sd2">عرض الخدمات والمعلومات الأساسية وهوية النشاط.</p>
-      </article>
-      <article class="card">
-        <div class="icon">📱</div>
-        <h3 data-t="s3">تصميم متجاوب</h3>
-        <p data-t="sd3">تجربة سهلة على الهواتف والأجهزة اللوحية والحواسيب.</p>
-      </article>
-    </div>
+  <div class="hero-content">
+    <div class="eyebrow">CAFÉ • RESTAURANT • MOMENTS</div>
+    <h1>Un instant<br>hors du temps.</h1>
+    <p>Découvrez un lieu chaleureux où le café d'exception, les saveurs délicates et l'élégance se rencontrent.</p>
+    <a href="#menu" class="btn">Découvrir notre carte ↗</a>
   </div>
 </section>
 
 <section id="about">
-  <div class="container about">
-    <div class="about-art">JW.</div>
+  <div class="intro">
+    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=85" alt="Intérieur chaleureux du café">
     <div>
-      <h2 data-t="aboutTitle">مرحبًا، أنا جمال</h2>
-      <p data-t="aboutText">أنا أتعلم تطوير الويب وأبني مشاريع تطبيقية لتطوير مهاراتي في التصميم والبرمجة. أركز على المواقع الجميلة والواضحة وسهلة الاستخدام.</p>
-      <p data-t="aboutText2">هدفي أن أساعد أصحاب المشاريع على تقديم خدماتهم بشكل أفضل عبر الإنترنت، مع الاستمرار في التعلم وتحسين جودة عملي.</p>
+      <div class="eyebrow">BIENVENUE CHEZ LE MIRAGE</div>
+      <h2>Plus qu'un café,<br>une expérience.</h2>
+      <p>Le Mirage est un concept de café-restaurant imaginé pour celles et ceux qui aiment les beaux espaces, les bons produits et les moments qui comptent.</p>
+      <p style="margin-top:14px">Du premier café du matin aux instants partagés entre amis, chaque détail invite à ralentir et à profiter.</p>
+      <div class="signature">L'art de savourer l'instant.</div>
     </div>
   </div>
 </section>
 
-<section class="portfolio" id="portfolio">
-  <div class="container">
-    <div class="section-title">
-      <h2 data-t="portfolioTitle">مشاريع ونماذج التصميم</h2>
-      <p data-t="portfolioIntro">نماذج تجريبية أستخدمها لعرض أفكاري ومهاراتي.</p>
-    </div>
-    <div class="project-grid">
-      <article class="project">
-        <img src="assets/le-mirage-exterior.png" alt="واجهة مقهى Le Mirage">
-        <div class="project-info">
-          <span class="pill" data-t="demo">مشروع تجريبي</span>
-          <h3>Le Mirage Café</h3>
-          <p data-t="projectText">تصميم تجريبي لمقهى خيالي، مع واجهة جذابة وأقسام يمكن تطويرها لتشمل القائمة والصور والمعلومات.</p>
-          <span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span>
-        </div>
-      </article>
-      <article class="project">
-        <img src="assets/cappuccino.png" alt="كوب كابتشينو برسمة لاتيه آرت">
-        <div class="project-info">
-          <span class="pill" data-t="visual">تصميم بصري</span>
-          <h3 data-t="coffeeTitle">القهوة وأجواء المقهى</h3>
-          <p data-t="coffeeText">صور منفصلة للمشروبات والأجواء لإضافتها إلى معرض الصور أو قائمة المقهى.</p>
-        </div>
-      </article>
-    </div>
-    <p class="note" data-t="disclaimer">تنبيه: Le Mirage مقهى خيالي للتدريب، وليس عميلًا حقيقيًا. لا تعرض معلومات الاتصال أو العنوان التجريبي على أنها حقيقية.</p>
+<section class="menu" id="menu">
+  <div class="heading">
+    <small>NOTRE SÉLECTION</small>
+    <h2>Des saveurs à découvrir</h2>
+    <p>Une sélection inspirée par le plaisir du café et la douceur des gourmandises.</p>
   </div>
-</section>
-
-<section id="process">
-  <div class="container">
-    <div class="section-title"><h2 data-t="processTitle">كيف أعمل؟</h2></div>
-    <div class="steps">
-      <article class="step"><h3 data-t="p1">01. التخطيط</h3><p data-t="pd1">تحديد الهدف والأقسام المطلوبة.</p></article>
-      <article class="step"><h3 data-t="p2">02. التصميم</h3><p data-t="pd2">اختيار الألوان والصور المناسبة.</p></article>
-      <article class="step"><h3 data-t="p3">03. البرمجة</h3><p data-t="pd3">إنشاء الموقع وجعله متجاوبًا.</p></article>
-      <article class="step"><h3 data-t="p4">04. المراجعة</h3><p data-t="pd4">اختبار الروابط والصور والمحتوى.</p></article>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="container">
-    <div class="contact">
-      <div>
-        <h2 data-t="contactTitle">هل لديك فكرة لموقع؟</h2>
-        <p data-t="contactText">تواصل معي لنتحدث عن مشروعك والأقسام التي تحتاجها.</p>
+  <div class="cards">
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=85" alt="Café fraîchement préparé">
+      <div class="card-info">
+        <h3>Café signature</h3>
+        <p>Un café riche en arômes, préparé avec soin pour un moment tout en douceur.</p>
       </div>
-      <a class="btn white" href="https://wa.me/212627215758" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
-    </div>
+    </article>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=800&q=85" alt="Cappuccino et latte art">
+      <div class="card-info">
+        <h3>Cappuccino crémeux</h3>
+        <p>Une mousse délicate et un espresso équilibré pour une pause réconfortante.</p>
+      </div>
+    </article>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=85" alt="Gâteau au chocolat">
+      <div class="card-info">
+        <h3>Douceurs maison</h3>
+        <p>Des gourmandises généreuses pour accompagner vos plus beaux instants.</p>
+      </div>
+    </article>
   </div>
+</section>
+
+<section id="gallery">
+  <div class="heading">
+    <small>NOTRE UNIVERS</small>
+    <h2>Une ambiance unique</h2>
+    <p>Un aperçu de l'univers chaleureux et élégant de Le Mirage.</p>
+  </div>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=600&q=80" alt="Espace café">
+    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80" alt="Décoration intérieure">
+    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80" alt="Espace convivial">
+    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80" alt="Préparation du café">
+  </div>
+</section>
+
+<section class="reservation" id="contact">
+  <h2>Votre prochain moment commence ici.</h2>
+  <p>Invitez-vous à une pause café et découvrez l'univers Le Mirage.</p>
+  <a class="btn" href="mailto:contact@example.com">Nous contacter</a>
 </section>
 </main>
 
 <footer>
-  <div class="container">© <span id="year"></span> Jamal Web — <span data-t="rights">جميع الحقوق محفوظة</span></div>
+  <strong>Le Mirage</strong><br>
+  Café • Restaurant • Art de vivre<br>
+  <small>Projet de démonstration — nom et coordonnées fictifs.</small><br>
+  © 2026 Le Mirage. Tous droits réservés.
 </footer>
 
-<script>
-const translations = {
-  ar: {
-    home:"الرئيسية",about:"من أنا",services:"الخدمات",portfolio:"أعمالي",contact:"تواصل",
-    tag:"مصمم مواقع ويب مستقل",headline:"أصنع لك موقعًا يعرض مشروعك بأفضل صورة.",
-    intro:"أصمم مواقع حديثة ومتجاوبة للمقاهي والمطاعم والشركات والمشاريع الصغيرة، بتصميم واضح وتجربة سهلة على الهاتف والحاسوب.",
-    view:"اكتشف أعمالي",start:"لنتحدث عن مشروعك",servicesTitle:"الخدمات التي أقدمها",
-    servicesIntro:"مواقع مصممة لتقديم مشروعك بطريقة احترافية.",
-    s1:"مواقع المقاهي والمطاعم",sd1:"صور المكان، قائمة الطعام، ساعات العمل وطرق التواصل.",
-    s2:"مواقع الشركات",sd2:"عرض الخدمات والمعلومات الأساسية وهوية النشاط.",
-    s3:"تصميم متجاوب",sd3:"تجربة سهلة على الهواتف والأجهزة اللوحية والحواسيب.",
-    aboutTitle:"مرحبًا، أنا جمال",
-    aboutText:"أنا أتعلم تطوير الويب وأبني مشاريع تطبيقية لتطوير مهاراتي في التصميم والبرمجة. أركز على المواقع الجميلة والواضحة وسهلة الاستخدام.",
-    aboutText2:"هدفي أن أساعد أصحاب المشاريع على تقديم خدماتهم بشكل أفضل عبر الإنترنت، مع الاستمرار في التعلم وتحسين جودة عملي.",
-    portfolioTitle:"مشاريع ونماذج التصميم",portfolioIntro:"نماذج تجريبية أستخدمها لعرض أفكاري ومهاراتي.",
-    demo:"مشروع تجريبي",projectText:"تصميم تجريبي لمقهى خيالي، مع واجهة جذابة وأقسام يمكن تطويرها لتشمل القائمة والصور والمعلومات.",
-    visual:"تصميم بصري",coffeeTitle:"القهوة وأجواء المقهى",
-    coffeeText:"صور منفصلة للمشروبات والأجواء لإضافتها إلى معرض الصور أو قائمة المقهى.",
-    disclaimer:"تنبيه: Le Mirage مقهى خيالي للتدريب، وليس عميلًا حقيقيًا. لا تعرض معلومات الاتصال أو العنوان التجريبي على أنها حقيقية.",
-    processTitle:"كيف أعمل؟",p1:"01. التخطيط",pd1:"تحديد الهدف والأقسام المطلوبة.",
-    p2:"02. التصميم",pd2:"اختيار الألوان والصور المناسبة.",
-    p3:"03. البرمجة",pd3:"إنشاء الموقع وجعله متجاوبًا.",
-    p4:"04. المراجعة",pd4:"اختبار الروابط والصور والمحتوى.",
-    contactTitle:"هل لديك فكرة لموقع؟",contactText:"تواصل معي لنتحدث عن مشروعك والأقسام التي تحتاجها.",
-    rights:"جميع الحقوق محفوظة"
-  },
-  en: {
-    home:"Home",about:"About",services:"Services",portfolio:"Portfolio",contact:"Contact",
-    tag:"Independent web creator",headline:"A website that presents your business at its best.",
-    intro:"I create modern, responsive websites for cafés, restaurants, companies, and small businesses, with clear design for phones and computers.",
-    view:"Explore my work",start:"Discuss your project",servicesTitle:"What I offer",
-    servicesIntro:"Websites designed to present your business professionally.",
-    s1:"Café & restaurant websites",sd1:"Venue photos, menus, opening hours, and contact details.",
-    s2:"Business websites",sd2:"Showcase your services, key information, and brand.",
-    s3:"Responsive design",sd3:"A smooth experience on phones, tablets, and computers.",
-    aboutTitle:"Hello, I'm Jamal",
-    aboutText:"I'm learning web development and building practical projects to improve my design and coding skills. I focus on clear, attractive, easy-to-use websites.",
-    aboutText2:"My goal is to help businesses present their services online while continuing to learn and improve my work.",
-    portfolioTitle:"Projects & design concepts",portfolioIntro:"Practice concepts that showcase my ideas and skills.",
-    demo:"Demo concept",projectText:"A concept website for a fictional café, with an inviting layout and sections for menus, photos, and details.",
-    visual:"Visual design",coffeeTitle:"Coffee & café atmosphere",
-    coffeeText:"Separate drink and atmosphere images for a gallery or café menu.",
-    disclaimer:"Note: Le Mirage is a fictional practice café, not a real client. Do not present sample contact details or addresses as real.",
-    processTitle:"How I work",p1:"01. Plan",pd1:"Define goals and required sections.",
-    p2:"02. Design",pd2:"Choose suitable colors and images.",
-    p3:"03. Build",pd3:"Create the website and make it responsive.",
-    p4:"04. Review",pd4:"Test links, images, and content.",
-    contactTitle:"Have a website idea?",contactText:"Contact me to discuss your project and its needs.",
-    rights:"All rights reserved"
-  },
-  fr: {
-    home:"Accueil",about:"À propos",services:"Services",portfolio:"Réalisations",contact:"Contact",
-    tag:"Créateur web indépendant",headline:"Un site qui valorise votre activité.",
-    intro:"Je crée des sites modernes et adaptatifs pour les cafés, restaurants, entreprises et petits projets, sur mobile comme sur ordinateur.",
-    view:"Voir mes projets",start:"Parlons de votre projet",servicesTitle:"Mes services",
-    servicesIntro:"Des sites conçus pour présenter votre activité avec professionnalisme.",
-    s1:"Sites de cafés et restaurants",sd1:"Photos, menus, horaires et coordonnées.",
-    s2:"Sites d'entreprise",sd2:"Présentation des services, informations et identité.",
-    s3:"Design adaptatif",sd3:"Une expérience fluide sur téléphone, tablette et ordinateur.",
-    aboutTitle:"Bonjour, je suis Jamal",
-    aboutText:"J'apprends le développement web et crée des projets pratiques pour améliorer mes compétences en design et en programmation. Je privilégie les sites clairs et faciles à utiliser.",
-    aboutText2:"Mon objectif est d'aider les petites entreprises à mieux présenter leurs services en ligne tout en continuant à progresser.",
-    portfolioTitle:"Projets et concepts",portfolioIntro:"Des concepts de démonstration qui présentent mes idées et mes compétences.",
-    demo:"Projet de démonstration",projectText:"Un concept de site pour un café fictif, avec une présentation soignée et des sections pour le menu, les photos et les informations.",
-    visual:"Design visuel",coffeeTitle:"Café et ambiance",
-    coffeeText:"Des images séparées de boissons et de l'ambiance pour une galerie ou un menu.",
-    disclaimer:"Note : Le Mirage est un café fictif créé pour s'entraîner, pas un vrai client. Ne présentez pas de coordonnées ou d'adresse fictives comme réelles.",
-    processTitle:"Ma méthode",p1:"01. Planifier",pd1:"Définir l'objectif et les sections.",
-    p2:"02. Concevoir",pd2:"Choisir les couleurs et les images.",
-    p3:"03. Développer",pd3:"Créer le site et l'adapter aux écrans.",
-    p4:"04. Vérifier",pd4:"Tester les liens, les images et le contenu.",
-    contactTitle:"Vous avez une idée de site ?",contactText:"Contactez-moi pour discuter de votre projet et de ses besoins.",
-    rights:"Tous droits réservés"
-  }
-};
-
-function setLanguage(lang) {
-  document.documentElement.lang = lang;
-  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-  document.querySelectorAll("[data-t]").forEach(el => {
-    const key = el.dataset.t;
-    if (translations[lang][key]) el.textContent = translations[lang][key];
-  });
-  document.title = lang === "ar" ? "Jamal Web | تصميم مواقع" :
-    lang === "fr" ? "Jamal Web | Création de sites web" : "Jamal Web | Web Design";
-}
-document.getElementById("language").addEventListener("change", e => setLanguage(e.target.value));
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
 </body>
 </html>
