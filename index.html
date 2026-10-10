@@ -1,187 +1,352 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Jamal Web - تصميم مواقع احترافية للمقاهي والمطاعم والشركات">
+<title>Jamal Web | تصميم مواقع</title>
 
-    <title>Jamal Web</title>
+<style>
+:root {
+  --blue: #315efb;
+  --cyan: #18b6bd;
+  --ink: #182238;
+  --muted: #667085;
+  --bg: #f6f8fc;
+  --white: #ffffff;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body {
+  margin: 0;
+  font-family: Arial, Tahoma, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.8;
+}
+a { text-decoration: none; color: inherit; }
+.container { width: min(1100px, 92%); margin: auto; }
+header {
+  position: sticky; top: 0; z-index: 10;
+  background: #ffffffed; backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e8ebf3;
+}
+nav {
+  min-height: 75px; display: flex; align-items: center;
+  justify-content: space-between; gap: 15px; flex-wrap: wrap;
+}
+.logo { font-size: 24px; font-weight: 900; }
+.logo span { color: var(--blue); }
+.links { display: flex; gap: 20px; flex-wrap: wrap; }
+.links a:hover { color: var(--blue); }
+select {
+  padding: 9px; border: 1px solid #ddd;
+  border-radius: 10px; background: white;
+}
+.btn {
+  display: inline-block; padding: 12px 21px;
+  border-radius: 12px; font-weight: bold;
+  background: var(--blue); color: white;
+  transition: .2s;
+}
+.btn:hover { transform: translateY(-3px); }
+.btn.white { background: white; color: var(--blue); }
+.hero { padding: 75px 0; }
+.hero-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center; gap: 42px;
+}
+.tag {
+  display: inline-block; padding: 6px 13px;
+  background: #e9efff; color: var(--blue);
+  border-radius: 30px; font-weight: bold;
+}
+h1 { font-size: clamp(35px, 5vw, 58px); line-height: 1.25; margin: 18px 0; }
+h2 { font-size: clamp(27px, 4vw, 38px); line-height: 1.3; }
+h3 { margin-bottom: 8px; }
+p { color: var(--muted); }
+.hero img {
+  width: 100%; height: 390px; object-fit: cover;
+  border-radius: 25px; box-shadow: 0 20px 50px #17203320;
+}
+.buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 25px; }
+section { padding: 65px 0; }
+.section-title { text-align: center; max-width: 680px; margin: 0 auto 35px; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.card {
+  background: var(--white); padding: 25px;
+  border: 1px solid #e7eaf2; border-radius: 20px;
+  box-shadow: 0 8px 28px #17203308;
+  transition: .2s;
+}
+.card:hover { transform: translateY(-5px); }
+.icon { font-size: 32px; }
+.about {
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center; gap: 35px;
+}
+.about-art {
+  min-height: 280px; border-radius: 25px;
+  background: linear-gradient(135deg, #315efb, #18b6bd);
+  display: grid; place-items: center; color: white;
+  font-size: 65px; font-weight: 900;
+}
+.portfolio { background: white; }
+.project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.project { overflow: hidden; border-radius: 22px; border: 1px solid #e7eaf2; background: white; }
+.project img { width: 100%; height: 260px; object-fit: cover; }
+.project-info { padding: 22px; }
+.pill {
+  display: inline-block; background: #edf1ff;
+  color: #3153d9; padding: 4px 10px;
+  border-radius: 30px; font-size: 13px; margin: 3px;
+}
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+.step { background: white; padding: 20px; border-radius: 18px; border: 1px solid #e7eaf2; }
+.contact {
+  background: #182744; color: white;
+  border-radius: 25px; padding: 35px;
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 25px;
+}
+.contact p { color: #dce5f7; }
+footer { padding: 25px 0; background: white; text-align: center; margin-top: 35px; }
+.note { font-size: 14px; background: #f3f6fc; padding: 13px; border-radius: 12px; }
+[hidden] { display: none !important; }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f1f2f6;
-            color: #111;
-            min-height: 100vh;
-            padding: 35px 20px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 650px;
-            margin: auto;
-            text-align: center;
-        }
-
-        /* Logo */
-        .profile {
-            width: 125px;
-            height: 125px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            background: #000;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
-        }
-
-        /* Name */
-        h1 {
-            font-size: 34px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        /* Description */
-        .description {
-            font-size: 18px;
-            color: #555;
-            margin-bottom: 35px;
-        }
-
-        /* WhatsApp button */
-        .link {
-            width: 100%;
-            min-height: 72px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 14px;
-
-            background: #ffffff;
-            color: #111;
-
-            text-decoration: none;
-
-            border-radius: 15px;
-            margin-bottom: 18px;
-
-            font-size: 19px;
-            font-weight: 600;
-
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-
-            transition: 0.25s ease;
-        }
-
-        .link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-        }
-
-        /* WhatsApp icon */
-        .whatsapp {
-            width: 34px;
-            height: 34px;
-        }
-
-        /* Footer */
-        .footer {
-            margin-top: 45px;
-            color: #777;
-            font-size: 14px;
-        }
-
-        .footer strong {
-            color: #111;
-        }
-
-        /* Mobile */
-        @media (max-width: 500px) {
-
-            body {
-                padding: 30px 18px;
-            }
-
-            .profile {
-                width: 115px;
-                height: 115px;
-            }
-
-            h1 {
-                font-size: 30px;
-            }
-
-            .description {
-                font-size: 16px;
-            }
-
-            .link {
-                min-height: 68px;
-                font-size: 18px;
-            }
-        }
-    </style>
+@media(max-width: 760px) {
+  .hero-grid, .about, .project-grid { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .hero { padding: 45px 0; }
+  .hero img { height: 290px; }
+  nav { padding: 12px 0; }
+  .links { gap: 12px; font-size: 14px; }
+  .contact { flex-direction: column; align-items: flex-start; }
+}
+</style>
 </head>
 
 <body>
+<header>
+  <nav class="container">
+    <a class="logo" href="#home">Jamal <span>Web.</span></a>
 
-    <div class="container">
-
-        <!-- Your Jamal Web logo -->
-        <img
-            src="logo.png"
-            alt="Jamal Web Logo"
-            class="profile"
-        >
-
-        <!-- Name -->
-        <h1>Jamal Web</h1>
-
-        <!-- Description -->
-        <p class="description">
-            Web Design | Business | Digital
-        </p>
-
-        <!-- WhatsApp -->
-        <a
-            class="link"
-            href="https://wa.me/212627215758"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-
-            <svg
-                class="whatsapp"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-
-                <path
-                    fill="#25D366"
-                    d="M12 2C6.48 2 2 6.48 2 12c0 1.76.46 3.41 1.32 4.83L2 22l5.3-1.35C8.69 21.5 10.3 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"
-                />
-
-                <path
-                    fill="#fff"
-                    d="M16.55 13.95c-.25-.13-1.47-.73-1.69-.82-.22-.08-.38-.12-.54.13-.16.25-.62.82-.75.98-.13.17-.27.19-.52.06-.25-.13-1.05-.39-2-.95-.74-.66-1.24-1.47-1.38-1.72-.13-.25-.02-.39.1-.52.12-.12.25-.31.37-.46.13-.16.17-.27.25-.44.08-.16.04-.3-.02-.43-.06-.13-.56-1.35-.77-1.85-.21-.48-.42-.42-.57-.43h-.46c-.16 0-.42.06-.64.3-.22.25-.84.83-.84 2.04s.86 2.38.98 2.54c.13.16 1.69 2.58 4.09 3.62.57.25 1.01.4 1.35.51.57.18 1.09.15 1.5.09.46-.07 1.42-.58 1.62-1.14.2-.55.2-1.03.14-1.13-.05-.03-.11-.05-.24-.12z"
-                />
-
-            </svg>
-
-            WhatsApp
-        </a>
-
-        <div class="footer">
-            © 2026 <strong>Jamal Web</strong>
-        </div>
-
+    <div class="links">
+      <a href="#home" data-t="home">الرئيسية</a>
+      <a href="#about" data-t="about">من أنا</a>
+      <a href="#services" data-t="services">الخدمات</a>
+      <a href="#portfolio" data-t="portfolio">أعمالي</a>
+      <a href="#contact" data-t="contact">تواصل</a>
     </div>
 
+    <select id="language" aria-label="Language">
+      <option value="ar">العربية</option>
+      <option value="en">English</option>
+      <option value="fr">Français</option>
+    </select>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="tag" data-t="tag">مصمم مواقع ويب مستقل</span>
+      <h1 data-t="headline">أصنع لك موقعًا يعرض مشروعك بأفضل صورة.</h1>
+      <p data-t="intro">أصمم مواقع حديثة ومتجاوبة للمقاهي والمطاعم والشركات والمشاريع الصغيرة، بتصميم واضح وتجربة سهلة على الهاتف والحاسوب.</p>
+      <div class="buttons">
+        <a class="btn" href="#portfolio" data-t="view">اكتشف أعمالي</a>
+        <a class="btn white" href="#contact" data-t="start">لنتحدث عن مشروعك</a>
+      </div>
+    </div>
+    <img src="assets/le-mirage-exterior.png" alt="واجهة مقهى Le Mirage التجريبي">
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-title">
+      <h2 data-t="servicesTitle">الخدمات التي أقدمها</h2>
+      <p data-t="servicesIntro">مواقع مصممة لتقديم مشروعك بطريقة احترافية.</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="icon">☕</div>
+        <h3 data-t="s1">مواقع المقاهي والمطاعم</h3>
+        <p data-t="sd1">صور المكان، قائمة الطعام، ساعات العمل وطرق التواصل.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🏢</div>
+        <h3 data-t="s2">مواقع الشركات</h3>
+        <p data-t="sd2">عرض الخدمات والمعلومات الأساسية وهوية النشاط.</p>
+      </article>
+      <article class="card">
+        <div class="icon">📱</div>
+        <h3 data-t="s3">تصميم متجاوب</h3>
+        <p data-t="sd3">تجربة سهلة على الهواتف والأجهزة اللوحية والحواسيب.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about">
+    <div class="about-art">JW.</div>
+    <div>
+      <h2 data-t="aboutTitle">مرحبًا، أنا جمال</h2>
+      <p data-t="aboutText">أنا أتعلم تطوير الويب وأبني مشاريع تطبيقية لتطوير مهاراتي في التصميم والبرمجة. أركز على المواقع الجميلة والواضحة وسهلة الاستخدام.</p>
+      <p data-t="aboutText2">هدفي أن أساعد أصحاب المشاريع على تقديم خدماتهم بشكل أفضل عبر الإنترنت، مع الاستمرار في التعلم وتحسين جودة عملي.</p>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio" id="portfolio">
+  <div class="container">
+    <div class="section-title">
+      <h2 data-t="portfolioTitle">مشاريع ونماذج التصميم</h2>
+      <p data-t="portfolioIntro">نماذج تجريبية أستخدمها لعرض أفكاري ومهاراتي.</p>
+    </div>
+    <div class="project-grid">
+      <article class="project">
+        <img src="assets/le-mirage-exterior.png" alt="واجهة مقهى Le Mirage">
+        <div class="project-info">
+          <span class="pill" data-t="demo">مشروع تجريبي</span>
+          <h3>Le Mirage Café</h3>
+          <p data-t="projectText">تصميم تجريبي لمقهى خيالي، مع واجهة جذابة وأقسام يمكن تطويرها لتشمل القائمة والصور والمعلومات.</p>
+          <span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span>
+        </div>
+      </article>
+      <article class="project">
+        <img src="assets/cappuccino.png" alt="كوب كابتشينو برسمة لاتيه آرت">
+        <div class="project-info">
+          <span class="pill" data-t="visual">تصميم بصري</span>
+          <h3 data-t="coffeeTitle">القهوة وأجواء المقهى</h3>
+          <p data-t="coffeeText">صور منفصلة للمشروبات والأجواء لإضافتها إلى معرض الصور أو قائمة المقهى.</p>
+        </div>
+      </article>
+    </div>
+    <p class="note" data-t="disclaimer">تنبيه: Le Mirage مقهى خيالي للتدريب، وليس عميلًا حقيقيًا. لا تعرض معلومات الاتصال أو العنوان التجريبي على أنها حقيقية.</p>
+  </div>
+</section>
+
+<section id="process">
+  <div class="container">
+    <div class="section-title"><h2 data-t="processTitle">كيف أعمل؟</h2></div>
+    <div class="steps">
+      <article class="step"><h3 data-t="p1">01. التخطيط</h3><p data-t="pd1">تحديد الهدف والأقسام المطلوبة.</p></article>
+      <article class="step"><h3 data-t="p2">02. التصميم</h3><p data-t="pd2">اختيار الألوان والصور المناسبة.</p></article>
+      <article class="step"><h3 data-t="p3">03. البرمجة</h3><p data-t="pd3">إنشاء الموقع وجعله متجاوبًا.</p></article>
+      <article class="step"><h3 data-t="p4">04. المراجعة</h3><p data-t="pd4">اختبار الروابط والصور والمحتوى.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact">
+      <div>
+        <h2 data-t="contactTitle">هل لديك فكرة لموقع؟</h2>
+        <p data-t="contactText">تواصل معي لنتحدث عن مشروعك والأقسام التي تحتاجها.</p>
+      </div>
+      <a class="btn white" href="https://wa.me/212627215758" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">© <span id="year"></span> Jamal Web — <span data-t="rights">جميع الحقوق محفوظة</span></div>
+</footer>
+
+<script>
+const translations = {
+  ar: {
+    home:"الرئيسية",about:"من أنا",services:"الخدمات",portfolio:"أعمالي",contact:"تواصل",
+    tag:"مصمم مواقع ويب مستقل",headline:"أصنع لك موقعًا يعرض مشروعك بأفضل صورة.",
+    intro:"أصمم مواقع حديثة ومتجاوبة للمقاهي والمطاعم والشركات والمشاريع الصغيرة، بتصميم واضح وتجربة سهلة على الهاتف والحاسوب.",
+    view:"اكتشف أعمالي",start:"لنتحدث عن مشروعك",servicesTitle:"الخدمات التي أقدمها",
+    servicesIntro:"مواقع مصممة لتقديم مشروعك بطريقة احترافية.",
+    s1:"مواقع المقاهي والمطاعم",sd1:"صور المكان، قائمة الطعام، ساعات العمل وطرق التواصل.",
+    s2:"مواقع الشركات",sd2:"عرض الخدمات والمعلومات الأساسية وهوية النشاط.",
+    s3:"تصميم متجاوب",sd3:"تجربة سهلة على الهواتف والأجهزة اللوحية والحواسيب.",
+    aboutTitle:"مرحبًا، أنا جمال",
+    aboutText:"أنا أتعلم تطوير الويب وأبني مشاريع تطبيقية لتطوير مهاراتي في التصميم والبرمجة. أركز على المواقع الجميلة والواضحة وسهلة الاستخدام.",
+    aboutText2:"هدفي أن أساعد أصحاب المشاريع على تقديم خدماتهم بشكل أفضل عبر الإنترنت، مع الاستمرار في التعلم وتحسين جودة عملي.",
+    portfolioTitle:"مشاريع ونماذج التصميم",portfolioIntro:"نماذج تجريبية أستخدمها لعرض أفكاري ومهاراتي.",
+    demo:"مشروع تجريبي",projectText:"تصميم تجريبي لمقهى خيالي، مع واجهة جذابة وأقسام يمكن تطويرها لتشمل القائمة والصور والمعلومات.",
+    visual:"تصميم بصري",coffeeTitle:"القهوة وأجواء المقهى",
+    coffeeText:"صور منفصلة للمشروبات والأجواء لإضافتها إلى معرض الصور أو قائمة المقهى.",
+    disclaimer:"تنبيه: Le Mirage مقهى خيالي للتدريب، وليس عميلًا حقيقيًا. لا تعرض معلومات الاتصال أو العنوان التجريبي على أنها حقيقية.",
+    processTitle:"كيف أعمل؟",p1:"01. التخطيط",pd1:"تحديد الهدف والأقسام المطلوبة.",
+    p2:"02. التصميم",pd2:"اختيار الألوان والصور المناسبة.",
+    p3:"03. البرمجة",pd3:"إنشاء الموقع وجعله متجاوبًا.",
+    p4:"04. المراجعة",pd4:"اختبار الروابط والصور والمحتوى.",
+    contactTitle:"هل لديك فكرة لموقع؟",contactText:"تواصل معي لنتحدث عن مشروعك والأقسام التي تحتاجها.",
+    rights:"جميع الحقوق محفوظة"
+  },
+  en: {
+    home:"Home",about:"About",services:"Services",portfolio:"Portfolio",contact:"Contact",
+    tag:"Independent web creator",headline:"A website that presents your business at its best.",
+    intro:"I create modern, responsive websites for cafés, restaurants, companies, and small businesses, with clear design for phones and computers.",
+    view:"Explore my work",start:"Discuss your project",servicesTitle:"What I offer",
+    servicesIntro:"Websites designed to present your business professionally.",
+    s1:"Café & restaurant websites",sd1:"Venue photos, menus, opening hours, and contact details.",
+    s2:"Business websites",sd2:"Showcase your services, key information, and brand.",
+    s3:"Responsive design",sd3:"A smooth experience on phones, tablets, and computers.",
+    aboutTitle:"Hello, I'm Jamal",
+    aboutText:"I'm learning web development and building practical projects to improve my design and coding skills. I focus on clear, attractive, easy-to-use websites.",
+    aboutText2:"My goal is to help businesses present their services online while continuing to learn and improve my work.",
+    portfolioTitle:"Projects & design concepts",portfolioIntro:"Practice concepts that showcase my ideas and skills.",
+    demo:"Demo concept",projectText:"A concept website for a fictional café, with an inviting layout and sections for menus, photos, and details.",
+    visual:"Visual design",coffeeTitle:"Coffee & café atmosphere",
+    coffeeText:"Separate drink and atmosphere images for a gallery or café menu.",
+    disclaimer:"Note: Le Mirage is a fictional practice café, not a real client. Do not present sample contact details or addresses as real.",
+    processTitle:"How I work",p1:"01. Plan",pd1:"Define goals and required sections.",
+    p2:"02. Design",pd2:"Choose suitable colors and images.",
+    p3:"03. Build",pd3:"Create the website and make it responsive.",
+    p4:"04. Review",pd4:"Test links, images, and content.",
+    contactTitle:"Have a website idea?",contactText:"Contact me to discuss your project and its needs.",
+    rights:"All rights reserved"
+  },
+  fr: {
+    home:"Accueil",about:"À propos",services:"Services",portfolio:"Réalisations",contact:"Contact",
+    tag:"Créateur web indépendant",headline:"Un site qui valorise votre activité.",
+    intro:"Je crée des sites modernes et adaptatifs pour les cafés, restaurants, entreprises et petits projets, sur mobile comme sur ordinateur.",
+    view:"Voir mes projets",start:"Parlons de votre projet",servicesTitle:"Mes services",
+    servicesIntro:"Des sites conçus pour présenter votre activité avec professionnalisme.",
+    s1:"Sites de cafés et restaurants",sd1:"Photos, menus, horaires et coordonnées.",
+    s2:"Sites d'entreprise",sd2:"Présentation des services, informations et identité.",
+    s3:"Design adaptatif",sd3:"Une expérience fluide sur téléphone, tablette et ordinateur.",
+    aboutTitle:"Bonjour, je suis Jamal",
+    aboutText:"J'apprends le développement web et crée des projets pratiques pour améliorer mes compétences en design et en programmation. Je privilégie les sites clairs et faciles à utiliser.",
+    aboutText2:"Mon objectif est d'aider les petites entreprises à mieux présenter leurs services en ligne tout en continuant à progresser.",
+    portfolioTitle:"Projets et concepts",portfolioIntro:"Des concepts de démonstration qui présentent mes idées et mes compétences.",
+    demo:"Projet de démonstration",projectText:"Un concept de site pour un café fictif, avec une présentation soignée et des sections pour le menu, les photos et les informations.",
+    visual:"Design visuel",coffeeTitle:"Café et ambiance",
+    coffeeText:"Des images séparées de boissons et de l'ambiance pour une galerie ou un menu.",
+    disclaimer:"Note : Le Mirage est un café fictif créé pour s'entraîner, pas un vrai client. Ne présentez pas de coordonnées ou d'adresse fictives comme réelles.",
+    processTitle:"Ma méthode",p1:"01. Planifier",pd1:"Définir l'objectif et les sections.",
+    p2:"02. Concevoir",pd2:"Choisir les couleurs et les images.",
+    p3:"03. Développer",pd3:"Créer le site et l'adapter aux écrans.",
+    p4:"04. Vérifier",pd4:"Tester les liens, les images et le contenu.",
+    contactTitle:"Vous avez une idée de site ?",contactText:"Contactez-moi pour discuter de votre projet et de ses besoins.",
+    rights:"Tous droits réservés"
+  }
+};
+
+function setLanguage(lang) {
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+  document.querySelectorAll("[data-t]").forEach(el => {
+    const key = el.dataset.t;
+    if (translations[lang][key]) el.textContent = translations[lang][key];
+  });
+  document.title = lang === "ar" ? "Jamal Web | تصميم مواقع" :
+    lang === "fr" ? "Jamal Web | Création de sites web" : "Jamal Web | Web Design";
+}
+document.getElementById("language").addEventListener("change", e => setLanguage(e.target.value));
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
