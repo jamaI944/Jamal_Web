@@ -1,84 +1,96 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Le Mirage | Café & Restaurant</title>
+<title>Le Mirage Café</title>
 <style>
 :root {
-  --dark:#171b2b;
-  --gold:#d8ad67;
-  --cream:#fff8ed;
-  --orange:#b96b42;
+  --navy:#151b2e;
+  --navy2:#273754;
+  --gold:#e7bd76;
+  --orange:#c9794c;
+  --cream:#fff7eb;
+  --white:#fff;
+  --text:#282a32;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:var(--cream);color:#27252a}
+body{font-family:Arial,sans-serif;background:var(--cream);color:var(--text);line-height:1.8}
 a{text-decoration:none;color:inherit}
 header{
-  position:absolute;top:0;left:0;width:100%;z-index:5;
-  padding:22px 7%;display:flex;justify-content:space-between;
-  align-items:center;color:white;gap:20px
+  background:var(--navy);color:white;padding:17px 6%;
+  display:flex;justify-content:space-between;align-items:center;
+  gap:18px;flex-wrap:wrap
 }
-.logo{font-size:27px;font-family:Georgia,serif;color:var(--gold)}
-nav{display:flex;gap:24px;flex-wrap:wrap}
-nav a{font-size:14px}
+.logo{font-family:Georgia,serif;font-size:27px;color:var(--gold);font-weight:bold}
+nav{display:flex;gap:20px;flex-wrap:wrap}
 nav a:hover{color:var(--gold)}
+.lang button{
+  padding:7px 11px;border:1px solid #ffffff66;border-radius:7px;
+  color:white;background:transparent;cursor:pointer;margin-inline-start:4px
+}
+.lang button:hover{background:var(--orange)}
 .hero{
-  min-height:690px;display:flex;align-items:center;color:white;
-  padding:130px 8% 80px;
-  background:linear-gradient(90deg,rgba(15,17,27,.88),rgba(15,17,27,.25)),
+  min-height:590px;display:flex;align-items:center;padding:75px 8%;
+  color:white;background:
+  linear-gradient(90deg,rgba(16,20,33,.88),rgba(16,20,33,.28)),
   url('https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1800&q=85') center/cover
 }
 .hero-content{max-width:650px}
-.eyebrow{color:var(--gold);letter-spacing:4px;font-size:13px}
-h1{font-family:Georgia,serif;font-size:clamp(48px,7vw,82px);line-height:1.08;margin:22px 0}
-.hero p{font-size:17px;line-height:1.9;color:#eee;max-width:530px}
+.eyebrow{color:var(--gold);letter-spacing:3px;font-size:13px}
+h1{font-family:Georgia,serif;font-size:clamp(43px,7vw,76px);line-height:1.2;margin:18px 0}
+.hero p{font-size:18px;color:#eee;max-width:550px}
 .btn{
- display:inline-block;margin-top:28px;padding:14px 25px;
- background:var(--gold);color:#201a14;font-weight:bold;
- border-radius:3px;transition:.25s
+  display:inline-block;margin-top:25px;padding:13px 24px;
+  border-radius:5px;background:var(--gold);color:var(--navy);
+  font-weight:bold;transition:.25s
 }
-.btn:hover{background:white;transform:translateY(-3px)}
-section{padding:85px 8%}
-.heading{text-align:center;margin-bottom:42px}
+.btn:hover{background:white;transform:translateY(-2px)}
+section{padding:75px 8%}
+.heading{text-align:center;margin-bottom:38px}
 .heading small{color:var(--orange);letter-spacing:3px}
-.heading h2{font-family:Georgia,serif;font-size:clamp(32px,4vw,45px);margin:10px 0;color:var(--dark)}
-.heading p{color:#777;max-width:600px;margin:auto;line-height:1.8}
-.intro{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-.intro img{width:100%;height:420px;object-fit:cover;border-radius:4px}
-.intro h2{font-family:Georgia,serif;font-size:39px;color:var(--dark);margin-bottom:18px}
-.intro p{line-height:1.9;color:#69656a}
-.signature{color:var(--orange);font-family:Georgia,serif;font-style:italic;margin-top:18px}
-.menu{background:#f0e5d6}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.card{background:white;overflow:hidden;box-shadow:0 10px 30px #30251b0b}
-.card img{width:100%;height:235px;object-fit:cover;display:block;transition:.4s}
-.card:hover img{transform:scale(1.04)}
-.card-info{padding:22px}
-.card h3{font-family:Georgia,serif;font-size:23px;margin-bottom:8px;color:var(--dark)}
-.card p{font-size:14px;line-height:1.8;color:#777}
+.heading h2{font-family:Georgia,serif;color:var(--navy);font-size:clamp(30px,4vw,43px);margin:8px 0}
+.heading p{color:#777;max-width:650px;margin:auto}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about-grid img{width:100%;height:390px;object-fit:cover;border-radius:8px}
+.about-grid h2{font-family:Georgia,serif;font-size:36px;color:var(--navy);margin-bottom:15px}
+.about-grid p{color:#666;margin-bottom:12px}
+.menu{background:#f0e3d1}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:white;border-radius:9px;overflow:hidden;box-shadow:0 10px 28px #202b4010}
+.card img{width:100%;height:225px;object-fit:cover;display:block}
+.card-info{padding:21px}
+.card h3{font-family:Georgia,serif;color:var(--navy);font-size:23px;margin-bottom:8px}
+.card p{color:#777;font-size:14px}
 .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.gallery img{width:100%;height:230px;object-fit:cover}
-.reservation{
- text-align:center;color:white;
- background:linear-gradient(#171b2be8,#171b2be8),
- url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=85') center/cover
+.gallery img{width:100%;height:210px;object-fit:cover;border-radius:6px}
+.contact{
+  background:linear-gradient(125deg,var(--navy),var(--navy2));
+  text-align:center;color:white
 }
-.reservation h2{font-family:Georgia,serif;font-size:42px;color:var(--gold);margin-bottom:15px}
-.reservation p{color:#eee;line-height:1.8}
-footer{background:#10121d;color:#ccc;text-align:center;padding:30px 7%;line-height:2}
+.contact h2{font-family:Georgia,serif;font-size:clamp(30px,5vw,44px);color:var(--gold);margin-bottom:12px}
+.contact p{color:#e2e5ec}
+.whatsapp{
+  display:inline-flex;align-items:center;gap:10px;
+  background:#25D366;color:white;padding:14px 25px;
+  border-radius:50px;font-weight:bold;margin-top:24px;
+  box-shadow:0 8px 22px #0003;transition:.2s
+}
+.whatsapp:hover{background:#1eae53;transform:translateY(-3px)}
+.wa-icon{width:24px;height:24px;fill:currentColor}
+footer{background:#0c1120;color:#ccc;text-align:center;padding:28px 6%;line-height:2}
 footer strong{color:var(--gold)}
 @media(max-width:800px){
- header{padding:18px 5%;flex-direction:column;background:#171b2b}
- nav{justify-content:center;gap:15px}
- .hero{min-height:650px;padding:170px 7% 70px}
- .intro{grid-template-columns:1fr}
- .intro img{height:300px}
- .cards{grid-template-columns:1fr}
- .gallery{grid-template-columns:repeat(2,1fr)}
- .gallery img{height:180px}
- section{padding:60px 6%}
+  header{justify-content:center}
+  nav{justify-content:center;gap:14px}
+  .hero{min-height:530px;padding:65px 7%}
+  .about-grid{grid-template-columns:1fr}
+  .about-grid img{height:280px}
+  .cards{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .gallery img{height:170px}
+  section{padding:55px 6%}
 }
 </style>
 </head>
@@ -87,63 +99,67 @@ footer strong{color:var(--gold)}
 <header>
   <a href="#home" class="logo">Le Mirage</a>
   <nav>
-    <a href="#home">Accueil</a>
-    <a href="#about">Notre histoire</a>
-    <a href="#menu">Notre carte</a>
-    <a href="#gallery">Galerie</a>
-    <a href="#contact">Contact</a>
+    <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+    <a href="#about" data-ar="قصتنا" data-en="Our Story">قصتنا</a>
+    <a href="#menu" data-ar="قائمتنا" data-en="Our Menu">قائمتنا</a>
+    <a href="#gallery" data-ar="معرض الصور" data-en="Gallery">معرض الصور</a>
+    <a href="#contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
   </nav>
+  <div class="lang">
+    <button onclick="setLanguage('ar')">العربية</button>
+    <button onclick="setLanguage('en')">English</button>
+  </div>
 </header>
 
 <main>
 <section class="hero" id="home">
   <div class="hero-content">
-    <div class="eyebrow">CAFÉ • RESTAURANT • MOMENTS</div>
-    <h1>Un instant<br>hors du temps.</h1>
-    <p>Découvrez un lieu chaleureux où le café d'exception, les saveurs délicates et l'élégance se rencontrent.</p>
-    <a href="#menu" class="btn">Découvrir notre carte ↗</a>
+    <div class="eyebrow" data-ar="قهوة • ذوق • لحظات جميلة" data-en="COFFEE • TASTE • BEAUTIFUL MOMENTS">قهوة • ذوق • لحظات جميلة</div>
+    <h1 data-ar="لحظات استثنائية تبدأ بفنجان قهوة." data-en="Exceptional moments begin with a cup of coffee.">لحظات استثنائية تبدأ بفنجان قهوة.</h1>
+    <p data-ar="اكتشف عالماً يجمع بين القهوة المميزة، الحلويات اللذيذة، والأجواء الدافئة المصممة لتستمتع بكل لحظة." data-en="Discover a world of specialty coffee, delicious desserts, and a warm atmosphere designed to make every moment special.">اكتشف عالماً يجمع بين القهوة المميزة، الحلويات اللذيذة، والأجواء الدافئة المصممة لتستمتع بكل لحظة.</p>
+    <a href="#menu" class="btn" data-ar="اكتشف قائمتنا ←" data-en="Explore Our Menu →">اكتشف قائمتنا ←</a>
   </div>
 </section>
 
 <section id="about">
-  <div class="intro">
-    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=85" alt="Intérieur chaleureux du café">
+  <div class="about-grid">
+    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=85" alt="ديكور مقهى أنيق">
     <div>
-      <div class="eyebrow">BIENVENUE CHEZ LE MIRAGE</div>
-      <h2>Plus qu'un café,<br>une expérience.</h2>
-      <p>Le Mirage est un concept de café-restaurant imaginé pour celles et ceux qui aiment les beaux espaces, les bons produits et les moments qui comptent.</p>
-      <p style="margin-top:14px">Du premier café du matin aux instants partagés entre amis, chaque détail invite à ralentir et à profiter.</p>
-      <div class="signature">L'art de savourer l'instant.</div>
+      <div class="eyebrow" data-ar="مرحباً بك في لو ميراج" data-en="WELCOME TO LE MIRAGE">مرحباً بك في لو ميراج</div>
+      <h2 data-ar="أكثر من مجرد مقهى" data-en="More Than Just a Café">أكثر من مجرد مقهى</h2>
+      <p data-ar="لو ميراج هو مفهوم مقهى يجمع بين الأناقة والراحة، حيث تلتقي جودة القهوة بجمال التفاصيل." data-en="Le Mirage is a café concept combining elegance and comfort, where quality coffee meets beautiful details.">لو ميراج هو مفهوم مقهى يجمع بين الأناقة والراحة، حيث تلتقي جودة القهوة بجمال التفاصيل.</p>
+      <p data-ar="سواء كنت تبحث عن بداية هادئة ليومك أو لقاء ممتع مع الأصدقاء، ستجد هنا الأجواء المناسبة." data-en="Whether you seek a peaceful start to your day or a lovely meeting with friends, you will find the right atmosphere here.">سواء كنت تبحث عن بداية هادئة ليومك أو لقاء ممتع مع الأصدقاء، ستجد هنا الأجواء المناسبة.</p>
+      <a href="#contact" class="btn" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</a>
     </div>
   </div>
 </section>
 
 <section class="menu" id="menu">
   <div class="heading">
-    <small>NOTRE SÉLECTION</small>
-    <h2>Des saveurs à découvrir</h2>
-    <p>Une sélection inspirée par le plaisir du café et la douceur des gourmandises.</p>
+    <small data-ar="اختياراتنا" data-en="OUR SELECTION">اختياراتنا</small>
+    <h2 data-ar="نكهات تستحق التجربة" data-en="Flavours Worth Discovering">نكهات تستحق التجربة</h2>
+    <p data-ar="استمتع بتشكيلة من القهوة والحلويات في أجواء دافئة وأنيقة." data-en="Enjoy a selection of coffee and desserts in a warm, elegant setting.">استمتع بتشكيلة من القهوة والحلويات في أجواء دافئة وأنيقة.</p>
   </div>
   <div class="cards">
     <article class="card">
-      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=85" alt="Café fraîchement préparé">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=85" alt="فنجان قهوة">
       <div class="card-info">
-        <h3>Café signature</h3>
-        <p>Un café riche en arômes, préparé avec soin pour un moment tout en douceur.</p>
+        <h3 data-ar="قهوة مميزة" data-en="Signature Coffee">قهوة مميزة</h3>
+        <p data-ar="قهوة غنية بالرائحة والنكهة، محضّرة بعناية لعشاق القهوة." data-en="Rich aromas and flavour, carefully prepared for coffee lovers.">قهوة غنية بالرائحة والنكهة، محضّرة بعناية لعشاق القهوة.</p>
       </div>
     </article>
     <article class="card">
-      <img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=800&q=85" alt="Cappuccino et latte art">
+      <img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=800&q=85" alt="كابتشينو">
       <div class="card-info">
-        <h3>Cappuccino crémeux</h3>
-        <p>Une mousse délicate et un espresso équilibré pour une pause réconfortante.</p>
+        <h3 data-ar="كابتشينو كريمي" data-en="Creamy Cappuccino">كابتشينو كريمي</h3>
+        <p data-ar="مزيج متوازن من الإسبريسو والحليب برغوة ناعمة." data-en="A balanced blend of espresso and milk with silky foam.">مزيج متوازن من الإسبريسو والحليب برغوة ناعمة.</p>
       </div>
     </article>
     <article class="card">
-      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=85" alt="Gâteau au chocolat">
+      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=85" alt="كعكة الشوكولاتة">
       <div class="card-info">
-        <h3>Douceurs maison</h3>
-        <p>Des gourmandises généreuses pour accompagner vos plus beaux instants.</p>
+        <h3 data-ar="حلويات شهية" data-en="Delicious Desserts">حلويات شهية</h3>
+        <p data-ar="حلويات لذيذة تضيف لمسة من السعادة إلى استراحة القهوة." data-en="Delicious treats that add a little happiness to your coffee break.">حلويات لذيذة تضيف لمسة من السعادة إلى استراحة القهوة.</p>
       </div>
     </article>
   </div>
@@ -151,31 +167,45 @@ footer strong{color:var(--gold)}
 
 <section id="gallery">
   <div class="heading">
-    <small>NOTRE UNIVERS</small>
-    <h2>Une ambiance unique</h2>
-    <p>Un aperçu de l'univers chaleureux et élégant de Le Mirage.</p>
+    <small data-ar="معرض الصور" data-en="OUR GALLERY">معرض الصور</small>
+    <h2 data-ar="أجواء لو ميراج" data-en="The Le Mirage Atmosphere">أجواء لو ميراج</h2>
+    <p data-ar="تفاصيل من عالم القهوة والراحة والتصميم الأنيق." data-en="A glimpse into our world of coffee, comfort, and elegant design.">تفاصيل من عالم القهوة والراحة والتصميم الأنيق.</p>
   </div>
   <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=600&q=80" alt="Espace café">
-    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80" alt="Décoration intérieure">
-    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80" alt="Espace convivial">
-    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80" alt="Préparation du café">
+    <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=600&q=80" alt="ركن القهوة">
+    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80" alt="داخل المقهى">
+    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80" alt="جلسات المقهى">
+    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80" alt="تحضير القهوة">
   </div>
 </section>
 
-<section class="reservation" id="contact">
-  <h2>Votre prochain moment commence ici.</h2>
-  <p>Invitez-vous à une pause café et découvrez l'univers Le Mirage.</p>
-  <a class="btn" href="mailto:contact@example.com">Nous contacter</a>
+<section class="contact" id="contact">
+  <h2 data-ar="قهوتك القادمة بانتظارك" data-en="Your Next Coffee Moment Awaits">قهوتك القادمة بانتظارك</h2>
+  <p data-ar="للاستفسار أو التواصل، راسلنا مباشرة عبر واتساب." data-en="For questions or enquiries, message us directly on WhatsApp.">للاستفسار أو التواصل، راسلنا مباشرة عبر واتساب.</p>
+  <a class="whatsapp" href="https://wa.me/212627215758" target="_blank" rel="noopener noreferrer">
+    <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.52 3.48A11.8 11.8 0 0 0 12.13 0C5.62 0 .32 5.3.32 11.81c0 2.08.54 4.11 1.57 5.9L.22 24l6.44-1.69a11.8 11.8 0 0 0 5.47 1.35h.01c6.51 0 11.81-5.3 11.81-11.81 0-3.15-1.23-6.12-3.43-8.37ZM12.14 21.65a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.82 1 1.02-3.72-.24-.38a9.81 9.81 0 1 1 8.39 4.68Zm5.38-7.35c-.3-.15-1.78-.88-2.05-.98-.27-.1-.47-.15-.66.15-.2.3-.76.98-.93 1.18-.17.2-.34.22-.64.07-.3-.15-1.26-.46-2.4-1.46-.89-.79-1.49-1.77-1.67-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.34.44-.51.15-.17.2-.3.3-.49.1-.2.05-.37-.03-.52-.07-.15-.66-1.59-.9-2.18-.24-.57-.48-.49-.66-.5h-.56c-.2 0-.51.07-.78.37-.27.3-1.03 1-1.03 2.43s1.05 2.82 1.2 3.01c.15.2 2.07 3.16 5.02 4.43.7.3 1.24.49 1.66.63.7.22 1.33.19 1.83.11.56-.08 1.78-.73 2.03-1.44.25-.71.25-1.32.17-1.44-.07-.12-.27-.2-.56-.35Z"/>
+    </svg>
+    <span data-ar="تواصل معنا عبر واتساب" data-en="Contact Us on WhatsApp">تواصل معنا عبر واتساب</span>
+  </a>
 </section>
 </main>
 
 <footer>
-  <strong>Le Mirage</strong><br>
-  Café • Restaurant • Art de vivre<br>
-  <small>Projet de démonstration — nom et coordonnées fictifs.</small><br>
-  © 2026 Le Mirage. Tous droits réservés.
+  <strong>Le Mirage Café</strong><br>
+  <span data-ar="قهوة • ذوق • لحظات جميلة" data-en="Coffee • Taste • Beautiful Moments">قهوة • ذوق • لحظات جميلة</span><br>
+  <small data-ar="مشروع تجريبي للتصميم — معلومات المقهى افتراضية." data-en="Design demo — café details are fictional.">مشروع تجريبي للتصميم — معلومات المقهى افتراضية.</small><br>
+  © 2026 Le Mirage
 </footer>
 
+<script>
+function setLanguage(lang) {
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.querySelectorAll('[data-ar]').forEach(function(el) {
+    el.textContent = el.getAttribute('data-' + lang);
+  });
+}
+</script>
 </body>
 </html>
